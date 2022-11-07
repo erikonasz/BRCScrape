@@ -30,7 +30,7 @@ for single_car in soup.find_all('div', class_='cars-wrapper'):
     print(auto_parametrai.text)
 
     car = {}
-    car["title"] = auto_pavadinimas.text
+    car["Pavadinimas"] = auto_pavadinimas.text
     subs = auto_parametrai.text.split(' | ')
     car["Metai"] = subs[0]
     car["KuroTipas"] = subs[1].split(" ")[1]
@@ -41,5 +41,5 @@ for single_car in soup.find_all('div', class_='cars-wrapper'):
     auto_count += 1
 
 print(json.dumps(out))
-with open("automobiliu_datajson", "w") as f:
+with open("automobiliu_data.json", "w") as f:
     f.write(json.dumps(out))
