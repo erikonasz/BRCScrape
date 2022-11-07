@@ -23,14 +23,17 @@ for single_car in soup.find_all('div', class_='cars-wrapper'):
 
     auto_pavadinimas = single_car.find('h2', class_='cars__title')
     auto_parametrai = single_car.find('p', class_='cars__subtitle')
+    auto_kaina = single_car.find('div', class_='w-full lg:w-auto cars-price text-right pt-1')
 
     print('\nAuto Numeris:', auto_count + 1)
 
     print(auto_pavadinimas.text)
     print(auto_parametrai.text)
+    print(auto_kaina.text)
 
     car = {}
     car["Pavadinimas"] = auto_pavadinimas.text
+    car["Kaina"] = auto_kaina.text
     subs = auto_parametrai.text.split(' | ')
     car["Metai"] = subs[0]
     car["KuroTipas"] = subs[1].split(" ")[1]
