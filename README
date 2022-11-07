@@ -1,1 +1,6 @@
 Scrape BRCAuto vechicle information.
+
+Usage:
+
+In the scraper.py file change If auto_count == [the desired number of autos you wish to generate]
+In the Pages section, change the [4] to the BRCAuto page number.
